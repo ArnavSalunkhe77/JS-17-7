@@ -1,15 +1,4 @@
-# Project related to DOM
-
-## Project Link
-[click Here](https://stackblitz.com/edit/dom-project-chaiaurcode?file=index.html)
-
-
-# Solution Code
-
-## Project 1 
-
-```javscript
-    const buttons = document.querySelectorAll('.button');
+const buttons = document.querySelectorAll('.button');
 const body = document.querySelector('body');
 
 buttons.forEach((button)=>{
@@ -20,4 +9,3 @@ buttons.forEach((button)=>{
         else if(e.target.id === 'yellow') body.style.backgroundColor = 'yellow';
     })
 })
-```

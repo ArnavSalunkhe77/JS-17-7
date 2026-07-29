@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom4</title>
+</head>
+<body style="background-color: black; color :aliceblue">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    let addLanguage = (languageName) =>{
+        let parent = document.querySelector('.language');
+        let li = document.createElement('li');
+        li.innerText = languageName;
+        parent.appendChild(li);
+        return parent;
+        // console.log(arr);
+    };
+    let addOptiLanguage = (langName) =>{
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').appendChild(li);
+        return li;
+    }; // this is otpmised using textNode method reduces Tc 
+    const arr = ["java" , "python" , "typescript"];
+    arr.forEach((item)=>{
+        // addLanguage(item);
+        addOptiLanguage(item);
+    })
+
+    // Edit 
+    const secondLang = document.querySelector('li:nth-child(2)'); // got the child at particular idx
+    const newLi = document.createElement('li'); // created new child sepratly
+    newLi.appendChild(document.createTextNode('Mojo'));  // inserted text in that node
+    secondLang.replaceWith(newLi);
+
+    // remove
+    const lastLang = document.querySelector('li:last-child');
+    lastLang.remove(); // removes that element
+</script>
+</html>

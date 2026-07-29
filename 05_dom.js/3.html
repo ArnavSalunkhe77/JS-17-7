@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom3</title>
+</head>
+<body style = "background-color : black ; color : white">
+    
+</body>
+<script>
+    let createDiv = (className,
+    bgColor,
+    padding,
+    title, addText ,
+    id = Math.random()) =>{
+        const div = document.createElement('div');
+        div.className = className;
+        div.id = id;
+        div.setAttribute("title" , title);
+        div.style.backgroundColor = bgColor;
+        div.style.padding = padding;
+        const addTextinDiv = document.createTextNode(addText);
+        div.appendChild(addTextinDiv);
+        return div;
+    }
+    // div.innerText = "hi this is dom creation class!!!"
+    // const addText =  document.createTextNode("Hi this is DOM creation class!!");
+    // div.appendChild(addText);
+    // console.log(div);
+    // imp!! this is use to append created dom element in html
+    // document.body.appendChild(div);
+    const myDiv = createDiv("main", "green", "12px", "generated title" , "Hi this is a DOM class");
+    document.body.appendChild(myDiv);
+</script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            background-color: black;
+            color : white;
+        }
+    </style>
+</head>
+<body class="main">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tues</div>
+        <div class="day">Wed</div>
+        <div class="day">Thur</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent');
+    const children = parent.children;
+    const arr = Array.from(children);
+    // console.log(arr);
+    // arr.map((item , idx)=>{
+    //     if(idx % 2 == 0){
+    //         item.style.backgroundColor = 'green';
+    //     } else item.style.backgroundColor = 'red';
+    // })
+    // console.log(parent.firstElementChild);
+    // console.log(parent.lastElementChild);
+
+    const dayOne = document.querySelector('.day');
+    console.log(dayOne.parentElement);
+    console.log(dayOne.nextElementSibling);
+</script>
+</html>

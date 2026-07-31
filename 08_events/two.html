@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Coffee and code</h1>
+    <button id="stop">stop</button>
+</body>
+<script>
+    const sayMyName = ()=>{
+        console.log('Hi my name is Arnav');
+    };
+    // setTimeout(sayMyName , 2000)
+    // fn will excute only 1 time and after 2 sec(2000ms)
+    // setInterval(sayMyName,2000);
+    // fn will excute repeadtedly after a breakpoint of 2sec(2000ms)
+
+    // document.querySelector('h1').innerHTML =  'Best JS res : Code & Coffee';
+    // now if i want to excute this after some time then i will use timeOut fn
+    const changeTxt = ()=>{
+    document.querySelector('h1')
+    .innerHTML = 'Best JS res : Code & Coffee';
+   }
+    const changeMe = setTimeout(changeTxt,4000);
+   const stopMe = document.querySelector('#stop');
+   stopMe.addEventListener('click' , (e)=>{
+        clearTimeout(changeMe); // helps to clear setTimeout so hence setTimeout fn will not excute
+   })
+</script>
+</html>

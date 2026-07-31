@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color:aliceblue">
+    <h1>Change the BackGroundColor every Second</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <h2>press Stop to stop changing colors</h2>
+</body>
+<script>
+//    const date = (str)=>{
+//     console.log(str , Date.now());
+//    }
+//    const intervalId= setInterval(date,2000 , "Welcome to the Mall");
+
+const changeColor = ()=>{
+    const hex = '0123456789ABCDEF';
+    let color = '#';
+    for(let i=0;i<6;i++){
+        color += hex[Math.floor(Math.random()*16)];
+    }
+    return color;
+}
+let intervalId;
+const startChangingColor = () =>{
+    const changebgColor = () => document.body.style.backgroundColor = changeColor();
+    if(!intervalId) intervalId = setInterval(changebgColor , 1000);
+}
+const stopChangingColor = ()=>{
+    clearInterval(intervalId);
+    intervalId = null;
+}
+const start = document.querySelector('#start');
+const stop = document.querySelector('#stop');
+
+start.addEventListener('click' , startChangingColor);
+stop.addEventListener('click' , stopChangingColor);
+
+</script>
+</html>
